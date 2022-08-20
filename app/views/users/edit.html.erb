@@ -1,16 +1,3 @@
-<div class ="errors_explanation">
-<% if @user.errors.any? %>
-  <%= @user.errors.count %> errors prohibited this obj from being saved:
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li>
-        <%= message %>
-      </li>
-      <% end %>
-  </ul>
-<% end %>
-</div>
-
 
 <div class='container'>
   <div class='row'>
@@ -19,8 +6,8 @@
     <%= form_with model:@user, local:true do |f| %>
       <%= render 'layouts/errors', obj: @user %>
       <div class="form-group">
-        <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control name" %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control name" %>
       </div>
      <div class="form-group">
         <%= f.label :image %>
