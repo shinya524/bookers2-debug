@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+
   def create
     books = Book.all
     book = Book.find(params[:book_id])
