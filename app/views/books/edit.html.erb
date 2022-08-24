@@ -1,14 +1,5 @@
 <div class ="errors_explanation">
-<% if @book.errors.any? %>
-  <%= @book.errors.count %> errors prohibited this obj from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li>
-        <%= message %>
-      </li>
-      <% end %>
-  </ul>
-<% end %>
+<%= render 'layouts/errors', obj: @book %>
 </div>
 
 
