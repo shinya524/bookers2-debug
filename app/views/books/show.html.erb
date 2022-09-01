@@ -10,7 +10,7 @@
       <h2>Book detail</h2>
 
       <table class='table'>
-        <tr>
+        <tr id = "book_<%= @book.id %>">
           <td><%= link_to(@books.user) do %>
             <%= image_tag @books.user.get_profile_image, size:"100x100" %><br>
             <%= @books.user.name %>
@@ -18,10 +18,10 @@
           </td>
           <td><%= link_to @books.title, @books %></td>
           <td><%= @books.body %></td>
-          <td id = "favorite_bottons_<%= @book.id %>">
+          <td class = "favorite-btn">
             <%= render 'favorites/favorite', book: @books %>
           </td>
-          <td>
+          <td class = "comments-count">
             <p>コメント数:<%= @books.book_comments.count %></p>
           </td>
 
@@ -32,8 +32,8 @@
         </tr>
       </table>
 
-      <table class = "table" id = "book_comment">
-        <%= render 'book_comments/comments', books: @books %>
+      <table class = "book_comments">
+        <%= render 'book_comments/comments', book: @books %>
       </table>
 
       <div>

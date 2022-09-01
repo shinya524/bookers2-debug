@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-   before_action :currect_user, only: [:edit, :update]
+   before_action :current_user, only: [:edit, :update]
 
   def show
     @books = Book.find(params[:id])
